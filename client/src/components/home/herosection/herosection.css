@@ -1,0 +1,152 @@
+/* .herosection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 2rem;
+}
+.herosection_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+} */
+
+/* Left content */
+/* .herosection_content {
+  flex: 1;
+}
+
+.herosection_content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.herosection_content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+} */
+
+/* Right image */
+/* .herosection_image {
+  flex: 1;
+} */
+
+/* .herosection_image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+.herosection_search {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (max-width: 900px) {
+  .herosection_top {
+    flex-direction: column;
+    text-align: center;
+  }
+  .herosection_image {
+    margin-top: 26px;
+  }
+} */
+ 
+.herosection {
+  width: 100%;
+  padding: 4rem 2rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 48px; 
+  box-sizing: border-box; 
+  background-color: #f8f9fa; 
+}
+
+
+.herosection_top {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.herosection_content {
+  flex: 1.2; 
+  max-width: 50%;
+}
+.herosection_content h1 {
+  font-size: 3.5rem; 
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.herosection_content p {
+  font-size: 1.35rem;
+  color: #555;
+  margin-bottom: 2.5rem; 
+}
+
+
+.herosection_image {
+  flex: 0.8; 
+  max-width: 50%;
+  position: relative;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+.herosection_image:hover {
+  transform: translateY(-5px) scale(1.01); 
+  box-shadow: 0 15px 30px rgba(28, 26, 26, 0.1); 
+}
+
+.herosection_image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem; 
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); 
+  transition: inherit; 
+}
+.herosection_search {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .herosection_top {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .herosection_content,
+  .herosection_image {
+    max-width: 100%; 
+    flex: none;
+  }
+  .herosection_content {
+    order: 2;
+  }
+  .herosection_image {
+    order: 1; 
+  }
+  .herosection {
+    padding: 3rem 1rem;
+  }
+  .herosection_content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+
+
+

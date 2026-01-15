@@ -1,0 +1,30 @@
+.service-card {
+    background-color: #ffffff;
+    border-top: 4px solid #facc15; /* yellow-500 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem; /* rounded-xl */
+    padding: 2rem; /* p-8 */
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.02);
+}
+
+.service-card-icon {
+    margin-bottom: 1rem; /* mb-4 */
+    font-size: 2.25rem; /* text-4xl */
+    color: #facc15; /* yellow-500 */
+}
+
+.service-card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.75rem; /* mb-3 */
+    color: #111827; /* gray-900 */
+}
+
+.service-card-text {
+    color: #374151; /* gray-700 */
+}

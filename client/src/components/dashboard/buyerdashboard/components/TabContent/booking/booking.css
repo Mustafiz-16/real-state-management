@@ -1,0 +1,93 @@
+.bookings-table-container {
+  overflow-x: auto;
+  border-radius: 1rem; /* rounded-xl */
+  border: 1px solid #f3f4f6; /* border-gray-100 */
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.bookings-table thead {
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.bookings-table th {
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  text-align: left;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700; /* font-bold */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.bookings-table tbody tr {
+  transition: background-color 0.15s;
+}
+
+.bookings-table tbody tr:hover {
+  background-color: #fff7ed; /* hover:bg-orange-50 */
+}
+
+.bookings-table td {
+  padding: 1rem 1.5rem; /* py-4 px-6 */
+  font-size: 0.875rem; /* text-sm */
+  color: #111827; /* text-gray-900 default */
+}
+
+.bookings-table td span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+}
+
+.bookings-status {
+  display: inline-flex;
+  padding: 0.25rem 1rem; /* px-4 py-1 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.625rem; /* text-xs */
+  font-weight: 700; /* font-bold */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* tracking-wider */
+}
+
+.status-confirmed {
+  background-color: #dcfce7; /* bg-green-100 */
+  color: #15803d; /* text-green-700 */
+  box-shadow: 0 0 0 1px #bbf7d0 inset; /* ring-1 ring-green-300 equivalent */
+}
+
+.status-pending {
+  background-color: #fef9c3; /* bg-yellow-100 */
+  color: #b45309; /* text-yellow-700 */
+  box-shadow: 0 0 0 1px #fde68a inset; /* ring-1 ring-yellow-300 equivalent */
+}
+
+.status-cancelled {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #b91c1c; /* text-red-700 */
+  box-shadow: 0 0 0 1px #fecaca inset; /* ring-1 ring-red-300 equivalent */
+}
+
+/* Responsive: hide location column on small screens */
+@media (max-width: 767px) {
+  .desktop-location {
+    display: none;
+  }
+  .mobile-location {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-location {
+    display: none;
+  }
+  .desktop-location {
+    display: inline-block;
+  }
+}

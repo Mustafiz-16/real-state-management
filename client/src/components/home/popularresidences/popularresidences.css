@@ -1,0 +1,21 @@
+.popular-residences {
+  padding: 54px 0 32px 0;
+  text-align: center;
+}
+
+.popular-residences_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.popular-residences h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+
+

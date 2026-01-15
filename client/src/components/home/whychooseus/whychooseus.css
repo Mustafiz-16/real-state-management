@@ -1,0 +1,26 @@
+.whychooseus {
+  padding: 52px 0 32px 0;
+  background: #fff7f0;
+  text-align: center;
+}
+
+.whychooseus_cards {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 26px;
+}
+
+.whychooseus h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+@media (max-width: 900px) {
+  .whychooseus_cards {
+    flex-direction: column;
+    gap: 26px;
+    align-items: center;
+  }
+}

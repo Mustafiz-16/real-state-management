@@ -1,0 +1,17 @@
+.testimonials {
+  padding: 2rem;
+  background-color: #fff7f0;
+}
+
+.testimonials_title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonials_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}

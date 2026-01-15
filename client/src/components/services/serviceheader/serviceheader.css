@@ -1,0 +1,28 @@
+.services-header {
+    text-align: center;
+    max-width: 64rem; /* max-w-4xl */
+    margin: 0 auto;
+}
+
+.services-header-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 800; /* font-extrabold */
+    color: #111827; /* gray-900 */
+    margin-bottom: 1rem; /* mb-4 */
+    line-height: 1.25; /* leading-tight */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .services-header-title {
+        font-size: 3rem; /* sm:text-5xl */
+    }
+}
+
+.highlight {
+    color: #d97706; /* text-yellow-600 */
+}
+
+.services-header-text {
+    font-size: 1.125rem; /* text-lg */
+    color: #4b5563; /* gray-600 */
+}

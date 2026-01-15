@@ -1,0 +1,48 @@
+.owner-profile-summary {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff6b36;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #111;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: #555;
+  margin-top: 2px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #777;
+  margin-top: 8px;
+}

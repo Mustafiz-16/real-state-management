@@ -1,0 +1,127 @@
+/* Search Bar */
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.searchbar_group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+  min-width: 0;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.searchbar_field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+
+.searchbar_field--price {
+  flex: 1.5;
+}
+
+.searchbar_icon {
+  color: #ff6b36;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.searchbar_input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #1f2937;
+  width: 100%;
+}
+
+.searchbar_input::placeholder {
+  color: #9ca3af;
+}
+
+.searchbar_select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.searchbar_input--small {
+  width: 90px;
+  min-width: 80px;
+}
+
+.searchbar_price-separator {
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.searchbar_divider {
+  width: 1px;
+  height: 28px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.searchbar_actions {
+  display: flex;
+  gap: 10px;
+}
+
+.searchbar_btn-icon {
+  margin-right: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .searchbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .searchbar_group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .searchbar_divider {
+    display: none;
+  }
+
+  .searchbar_field {
+    width: 100%;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px;
+  }
+
+  .searchbar_field:last-child {
+    border-bottom: none;
+  }
+
+  .searchbar_actions {
+    width: 100%;
+  }
+
+  .searchbar_actions button {
+    flex: 1;
+  }
+}

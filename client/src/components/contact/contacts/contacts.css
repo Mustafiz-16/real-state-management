@@ -1,0 +1,13 @@
+.contact-page-main {
+  max-width: 1024px; /* max-w-4xl */
+  margin: 0 auto;
+  padding: 4rem 1rem; /* py-16 px-4 */
+  display: grid;
+  gap: 2.5rem; /* gap-10 */
+}
+
+@media(min-width: 768px) {
+  .contact-page-main {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+  }
+}
