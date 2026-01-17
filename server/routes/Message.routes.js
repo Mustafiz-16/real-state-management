@@ -4,7 +4,7 @@ import { sendMessage, getMessages } from "../controllers/Message.contollers.js";
 
 const router = express.Router();
 
-router.post("/", protect, sendMessage); // optional, mostly Socket.io
+router.post("/", protect, sendMessage); 
 router.get("/:conversationId", protect, getMessages);
 
 export default router;

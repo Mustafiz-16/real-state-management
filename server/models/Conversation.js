@@ -1,4 +1,4 @@
-//Chat threads between users.
+
 import mongoose from "mongoose";
 
 const conversationSchema = new mongoose.Schema(

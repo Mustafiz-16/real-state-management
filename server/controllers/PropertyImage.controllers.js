@@ -19,15 +19,14 @@ export const uploadPropertyImage = async (req, res) => {
       return res.status(400).json({ message: "Property ID is required" });
     }
 
-    // optional safety check
+
     const property = await Property.findById(propertyId);
     if (!property)
       return res.status(404).json({ message: "Property not found" });
 
-    // Cloudinary returns the URL in req.file.path
     const image = await PropertyImage.create({
       property_id: propertyId,
-      imageUrl: req.file.path, // Cloudinary URL
+      imageUrl: req.file.path,
     });
 
     console.log("   ✅ Image saved:", image.imageUrl);
@@ -37,8 +36,6 @@ export const uploadPropertyImage = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-//Owner dashboard → Add property images
-//Admin review page
 
 export const getPropertyImages = async (req, res) => {
   try {
@@ -51,8 +48,7 @@ export const getPropertyImages = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-//Property details page
-//Buyer browsing properties
+
 
 export const deletePropertyImage = async (req, res) => {
   try {
@@ -62,18 +58,16 @@ export const deletePropertyImage = async (req, res) => {
       return res.status(404).json({ message: "Image not found" });
     }
 
-    // Delete from Cloudinary
+
     const publicId = getPublicIdFromUrl(image.imageUrl);
     if (publicId) {
       await deleteFromCloudinary(publicId);
     }
 
-    // Delete from database
+
     await PropertyImage.findByIdAndDelete(req.params.imageId);
     res.json({ message: "Image deleted successfully" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
-//Owner dashboard (remove image)
-//Admin moderation

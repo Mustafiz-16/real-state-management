@@ -1,4 +1,4 @@
-//PropertyImage.model.js – Images for properties.
+
 import mongoose from "mongoose";
 
 const propertyImageSchema = new mongoose.Schema(

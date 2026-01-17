@@ -3,7 +3,7 @@ import AdminLog from "../models/AdminLog.js";
 import PropertyImage from "../models/Propertyimage.js";
 import Document from "../models/Document.js";
 
-// Get a single property by ID
+
 export const getPropertyById = async (req, res) => {
   try {
     const property = await Property.findById(req.params.id)
@@ -14,7 +14,7 @@ export const getPropertyById = async (req, res) => {
       return res.status(404).json({ message: "Property not found" });
     }
 
-    // Get images and documents for this property
+
     const images = await PropertyImage.find({ property_id: property._id });
     const documents = await Document.find({ property_id: property._id });
 
@@ -116,13 +116,6 @@ export const deleteProperty = async (req, res) => {
   }
 };
 
-// export const getOwnerProperties = async (req, res) => {
-//   const properties = await Property.find({
-//     owner_id: req.user.id,
-//   });
-
-//   res.json(properties);
-// };
 export const getOwnerProperties = async (req, res) => {
   try {
     const properties = await Property.find({ owner_id: req.user.id }).lean();

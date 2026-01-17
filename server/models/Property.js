@@ -1,4 +1,4 @@
-//Property details (title, description, price, owner, etc.).
+
 import mongoose from "mongoose";
 
 const propertySchema = new mongoose.Schema(
@@ -33,7 +33,7 @@ const propertySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Add indexes for better query performance
+
 propertySchema.index({ owner_id: 1 });
 propertySchema.index({ status: 1 });
 propertySchema.index({ price: 1 });

@@ -6,7 +6,7 @@ export const signup = async (req, res) => {
   try {
     const { role, name, email, password } = req.body;
 
-    // Validation
+
     if (!role || !email || !password) {
       return res.status(400).json({ message: "Role, email, and password are required" });
     }

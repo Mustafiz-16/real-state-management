@@ -1,4 +1,4 @@
-//– Uploaded documents,ID proofs or property papers.
+
 import mongoose from "mongoose";
 
 const documentSchema = new mongoose.Schema(

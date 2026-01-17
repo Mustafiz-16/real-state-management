@@ -10,26 +10,18 @@ const PrivateRoute = ({ role, children }) => {
     localStorage.removeItem("user");
   }
 
-  if (!user) return <Navigate to="/auth" />; // not logged in
+  if (!user) return <Navigate to="/auth" />; 
   
-  // Support single role or array of roles
   if (role) {
     const allowedRoles = Array.isArray(role) ? role : [role];
     if (!allowedRoles.includes(user.role)) {
-      return <Navigate to="/" />; // wrong role
+      return <Navigate to="/" />;
     }
   }
 
   return children;
 };
 
-// const PrivateRoute = ({ role, children }) => {
-//   const user = JSON.parse(localStorage.getItem("user"));
-//   if (!user) return <Navigate to="/auth" />;
 
-//   if (role && !role.includes(user.role)) return <Navigate to="/" />;
-
-//   return children;
-// };
 
 export default PrivateRoute;

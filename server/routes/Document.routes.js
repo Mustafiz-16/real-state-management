@@ -9,7 +9,7 @@ import { uploadDocument as uploadDocumentMiddleware } from "../config/cloudinary
 
 const router = express.Router();
 
-// Multer error handling wrapper
+
 const handleMulterError = (err, req, res, next) => {
   if (err) {
     console.error("Multer/Cloudinary Error:", err);
@@ -29,11 +29,7 @@ router.post(
   uploadDocument
 );
 
-/**
- * @route   GET /api/documents/:propertyId
- * @desc    Get all documents of a property
- * @access  Private (Owner/Admin)
- */
+
 router.get(
   "/:propertyId",
   protect,

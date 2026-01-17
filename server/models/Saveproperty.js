@@ -1,4 +1,4 @@
-//Properties that users saved/bookmarked.
+
 import mongoose from "mongoose";
 
 const savedPropertySchema = new mongoose.Schema(
@@ -17,7 +17,6 @@ const savedPropertySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// one buyer cannot save same property twice
 savedPropertySchema.index({ buyer_id: 1, property_id: 1 }, { unique: true });
 
 export default mongoose.model("SavedProperty", savedPropertySchema);

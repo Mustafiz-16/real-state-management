@@ -1,4 +1,4 @@
-//Price drop / booking / system notification
+
 
 import mongoose from "mongoose";
 
@@ -31,7 +31,7 @@ const notificationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Add index for faster queries
+
 notificationSchema.index({ user_id: 1, isRead: 1 });
 
 export default mongoose.model("Notification", notificationSchema);

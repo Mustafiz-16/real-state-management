@@ -14,7 +14,7 @@ export const notifyPriceDrop = async (propertyId, newPrice) => {
   }
 };
 
-/* Get all notifications for logged-in user */
+
 export const getNotifications = async (req, res) => {
   try {
     const notifications = await Notification.find({ user_id: req.user.id })
@@ -26,7 +26,6 @@ export const getNotifications = async (req, res) => {
   }
 };
 
-/* Get unread notification count */
 export const getUnreadCount = async (req, res) => {
   try {
     const count = await Notification.countDocuments({
@@ -39,7 +38,7 @@ export const getUnreadCount = async (req, res) => {
   }
 };
 
-/* Mark notification as read */
+
 export const markAsRead = async (req, res) => {
   try {
     const notification = await Notification.findOneAndUpdate(
@@ -58,7 +57,7 @@ export const markAsRead = async (req, res) => {
   }
 };
 
-/* Mark all notifications as read */
+
 export const markAllAsRead = async (req, res) => {
   try {
     await Notification.updateMany(
@@ -71,7 +70,7 @@ export const markAllAsRead = async (req, res) => {
   }
 };
 
-/* Delete a notification */
+
 export const deleteNotification = async (req, res) => {
   try {
     await Notification.findOneAndDelete({

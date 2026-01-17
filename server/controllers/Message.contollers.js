@@ -3,22 +3,7 @@ import Conversation from "../models/Conversation.js";
 
 
 
-// export const sendMessage = async (req, res) => {
-//   const message = await Message.create({
-//     conversation_id: req.body.conversationId,
-//     sender_id: req.user.id,
-//     text: req.body.text,
-//   });
 
-//   await Conversation.findByIdAndUpdate(
-//     req.body.conversationId,
-//     { lastMessage: req.body.text }
-//   );
-
-//   res.status(201).json(message);
-// };
-
-//const { conversationId, text } = req.body;
 
 export const sendMessage = async (req, res) => {
   try {
@@ -57,4 +42,4 @@ export const getMessages = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-//Owner & Buyer messaging
+

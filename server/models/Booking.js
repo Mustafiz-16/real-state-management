@@ -1,4 +1,4 @@
-//– Booking info (property booked, user, dates, status).
+
 import mongoose from "mongoose";
 
 const bookingSchema = new mongoose.Schema(

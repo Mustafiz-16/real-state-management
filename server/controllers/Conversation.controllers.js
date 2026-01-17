@@ -6,7 +6,7 @@ export const createConversation = async (req, res) => {
       return res.status(400).json({ message: "propertyId and ownerId are required" });
     }
 
-    // Check if conversation already exists
+
     const existingConvo = await Conversation.findOne({
       property_id: req.body.propertyId,
       buyer_id: req.user.id,
@@ -14,7 +14,7 @@ export const createConversation = async (req, res) => {
     });
 
     if (existingConvo) {
-      // Return existing conversation with populated fields
+
       const populated = await Conversation.findById(existingConvo._id)
         .populate("property_id", "title location")
         .populate("buyer_id", "name email")
@@ -65,7 +65,6 @@ export const getConversationById = async (req, res) => {
       return res.status(404).json({ message: "Conversation not found" });
     }
 
-    // Verify user is part of conversation
     if (convo.buyer_id._id.toString() !== req.user.id && 
         convo.owner_id._id.toString() !== req.user.id) {
       return res.status(403).json({ message: "Not authorized" });

@@ -5,7 +5,6 @@ const API = axios.create({
   withCredentials: true,
 });
 
-// Request interceptor - auto attach token and set Content-Type
 API.interceptors.request.use(
   (req) => {
     const token = localStorage.getItem("token");
@@ -13,10 +12,9 @@ API.interceptors.request.use(
       req.headers.Authorization = `Bearer ${token}`;
     }
     
-    // For FormData (file uploads), let browser set Content-Type with boundary
-    // For other requests, set JSON content type
+
     if (req.data instanceof FormData) {
-      // Delete any Content-Type header - browser will set it with boundary
+
       delete req.headers["Content-Type"];
     } else if (!req.headers["Content-Type"]) {
       req.headers["Content-Type"] = "application/json";
@@ -29,12 +27,10 @@ API.interceptors.request.use(
   }
 );
 
-// Response interceptor - handle errors globally
 API.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Unauthorized - clear token and redirect to login
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       if (window.location.pathname !== "/auth") {

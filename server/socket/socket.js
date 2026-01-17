@@ -34,7 +34,6 @@ export const initSocket = (io) => {
           lastMessageSender: senderId,
         });
 
-        // Emit message safely
         io.to(conversationId).emit("receiveMessage", message.toObject());
       } catch (err) {
         console.error("Socket message error:", err);

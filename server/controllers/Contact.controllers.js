@@ -1,4 +1,4 @@
-// controllers/contact.controllers.js
+
 import ContactMessage from "../models/ContactMessage.js";
 
 export const submitContactForm = async (req, res) => {

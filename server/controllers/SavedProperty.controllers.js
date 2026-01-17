@@ -1,16 +1,6 @@
 import SavedProperty from "../models/Saveproperty.js";
 
-// export const saveProperty = async (req, res) => {
-//   try {
-//     const saved = await SavedProperty.create({
-//       buyer_id: req.user.id,
-//       property_id: req.params.propertyId,
-//     });
-//     res.status(201).json(saved);
-//   } catch (err) {
-//     res.status(400).json({ message: "Already saved" });
-//   }
-// };
+
 
 export const saveProperty = async (req, res) => {
   try {
@@ -60,12 +50,3 @@ export const getSavedProperties = async (req, res) => {
   res.json(data);
 };
 
-// export const getSavedProperties = async (req, res) => {
-//   try {
-//     const userId = req.user._id; // from protect middleware
-//     const savedProperties = await SavedProperty.find({ user: userId }).populate('property');
-//     res.status(200).json({ success: true, savedProperties });
-//   } catch (error) {
-//     res.status(500).json({ success: false, message: error.message });
-//   }
-// };

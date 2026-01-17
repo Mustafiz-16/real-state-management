@@ -5,26 +5,22 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
-// Ensure env vars are loaded (needed because this file may be imported before server.js loads dotenv)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config({ path: join(__dirname, "../.env") });
 
-// Configure Cloudinary
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Log Cloudinary config status
 console.log("☁️ Cloudinary Config:", {
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME || "NOT SET",
   api_key: process.env.CLOUDINARY_API_KEY ? "SET" : "NOT SET",
   api_secret: process.env.CLOUDINARY_API_SECRET ? "SET" : "NOT SET",
 });
-
-// Storage for property images
 const imageStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
@@ -34,7 +30,6 @@ const imageStorage = new CloudinaryStorage({
   },
 });
 
-// Storage for documents (PDFs, etc.)
 const documentStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
@@ -44,18 +39,17 @@ const documentStorage = new CloudinaryStorage({
   },
 });
 
-// Multer upload instances
+
 export const uploadImage = multer({
   storage: imageStorage,
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+  limits: { fileSize: 10 * 1024 * 1024 },
 });
 
 export const uploadDocument = multer({
   storage: documentStorage,
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB limit
+  limits: { fileSize: 20 * 1024 * 1024 },
 });
 
-// Helper to delete file from Cloudinary
 export const deleteFromCloudinary = async (publicId, resourceType = "image") => {
   try {
     const result = await cloudinary.uploader.destroy(publicId, {
@@ -68,7 +62,6 @@ export const deleteFromCloudinary = async (publicId, resourceType = "image") => 
   }
 };
 
-// Helper to extract public_id from Cloudinary URL
 export const getPublicIdFromUrl = (url) => {
   if (!url) return null;
   

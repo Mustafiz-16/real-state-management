@@ -18,14 +18,13 @@ import cors from "cors";
 
 import path from "path";
 
-// Note: dotenv.config() is called in server.js before this file is imported
+
 
 const app = express();
 
-// CORS configuration
+
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, curl, etc)
     const allowedOrigins = [
       process.env.FRONTEND_URL || "http://localhost:5173",
       "http://localhost:5173"
@@ -34,7 +33,7 @@ const corsOptions = {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(null, true); // Allow all origins in development
+      callback(null, true); 
     }
   },
   credentials: true,
@@ -47,7 +46,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Handle preflight requests for all routes
+
 app.use((req, res, next) => {
   if (req.method === 'OPTIONS') {
     res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
@@ -61,8 +60,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-// Don't call connectToDB() here - it will be called from server.js after env vars are loaded
-// Export connectToDB so server.js can call it
+
 export { default as connectToDB } from "./config/db.js";
 
 app.use("/api/auth", authRoutes);

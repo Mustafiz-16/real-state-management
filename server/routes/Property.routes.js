@@ -21,12 +21,7 @@ router.delete("/:id", protect, deleteProperty);
 
 
 
-/**
- * @route   POST /api/properties
- * @desc    Owner creates a property
- * @access  Private (Owner)
- */
-//router.post("/", authMiddleware, createProperty);
+
 
 router.post("/", protect, createProperty);
 
@@ -34,17 +29,9 @@ router.post("/", protect, createProperty);
 router.put("/:id", protect, updateProperty);
 
 
-//router.put("/:id", protect, updateProperty);
 
 
-/**
- * @route   PATCH /api/properties/:id/approve
- * @desc    Admin approves a property
- * @access  Private (Admin)
- */
-//router.patch("/:id/approve", authMiddleware, approveProperty);
 
-//router.patch("/:id/approve", protect, approveProperty);
 
 
 // Admin routes

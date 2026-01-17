@@ -1,4 +1,4 @@
-//Logs of admin actions (like approving properties, banning users)
+
 import mongoose from "mongoose";
 
 const adminLogSchema = new mongoose.Schema(
@@ -14,7 +14,7 @@ const adminLogSchema = new mongoose.Schema(
       required: true,
     },
 
-    target_type: String, // User / Property / Booking
+    target_type: String,
     target_id: mongoose.Schema.Types.ObjectId,
   },
   { timestamps: true }

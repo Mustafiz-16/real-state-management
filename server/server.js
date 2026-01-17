@@ -1,4 +1,4 @@
-// Load environment variables FIRST before any imports
+
 import dotenv from "dotenv";
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -6,10 +6,10 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Load .env file with explicit path
+
 dotenv.config({ path: join(__dirname, '.env') });
 
-// Verify env vars loaded
+
 console.log('🔍 Environment variables check:');
 console.log('PORT:', process.env.PORT || 'NOT LOADED');
 console.log('MONGO_URI:', process.env.MONGO_URI ? '✅ LOADED' : '❌ NOT LOADED');
@@ -22,15 +22,13 @@ import http from "http";
 import { Server } from "socket.io";
 import { initSocket } from "./socket/socket.js";
 
-// Connect to database after env vars are loaded
+
 await connectToDB();
 
 const PORT = process.env.PORT || 2000;
 const server = http.createServer(app);
 
-// const io = new Server(server, {
-//   cors: { origin: "*" }, // frontend URL দিতে পারো production এ
-// });
+
 
 const io = new Server(server, {
   cors: {

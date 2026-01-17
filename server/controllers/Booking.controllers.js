@@ -38,4 +38,3 @@ export const updateBookingStatus = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-//Buyer requests → Owner approves

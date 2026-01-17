@@ -1,7 +1,7 @@
 import Property from "../models/Property.js";
 import Notification from "../models/Notification.js";
 
-/* Get all pending properties */
+
 export const getPendingProperties = async (req, res) => {
   try {
     const properties = await Property.find({ status: "pending" })
@@ -14,7 +14,7 @@ export const getPendingProperties = async (req, res) => {
   }
 };
 
-/* Approve property */
+
 export const approveProperty = async (req, res) => {
   try {
     const property = await Property.findByIdAndUpdate(
@@ -30,7 +30,7 @@ export const approveProperty = async (req, res) => {
       return res.status(404).json({ message: "Property not found" });
     }
 
-    // Create notification for owner
+
     await Notification.create({
       user_id: property.owner_id,
       property_id: property._id,
@@ -45,7 +45,6 @@ export const approveProperty = async (req, res) => {
   }
 };
 
-/* Reject property */
 export const rejectProperty = async (req, res) => {
   try {
     const { reason } = req.body;
@@ -64,7 +63,6 @@ export const rejectProperty = async (req, res) => {
       return res.status(404).json({ message: "Property not found" });
     }
 
-    // Create notification for owner
     await Notification.create({
       user_id: property.owner_id,
       property_id: property._id,
