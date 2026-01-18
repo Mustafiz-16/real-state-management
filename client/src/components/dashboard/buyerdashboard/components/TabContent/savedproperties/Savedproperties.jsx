@@ -45,7 +45,7 @@
 // }
 import React from 'react';
 import { MapPin, X } from 'lucide-react';
-import './savedProperties.css';
+import './savedproperties.css';
 
 export default function SavedPropertiesTab({ properties }) {
     return (

@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "../pages/HomePage.jsx";
-import ServicesPage from "../pages/servicespage.jsx";
-import PropertiesPage from "../pages/propertiespage.jsx";
-import PropertyDetailsPage from "../pages/propertydetailspage.jsx";
-import ContactPage from "../pages/contactpage.jsx";
-import AuthPage from "../pages/authpage.jsx";
-import PrivateRoute from "./PrivateRoutes.jsx";
+import HomePage from "../pages/homepage";
+import ServicesPage from "../pages/servicespage";
+import PropertiesPage from "../pages/propertiespage";
+import PropertyDetailsPage from "../pages/propertydetailspage";
+import ContactPage from "../pages/contactpage";
+import AuthPage from "../pages/authpage";
+import PrivateRoute from "./PrivateRoutes";
 //import DashboardPage from "../pages/dashboardpage";
-import BuyerDashboardPage from "../pages/buyerdashboardpage.jsx";
-import OwnerDashboardPage from "../pages/ownerdashboardpage.jsx";
+import BuyerDashboardPage from "../pages/buyerdashboardpage";
+import OwnerDashboardPage from "../pages/ownerdashboardpage";
 // import AgentDashboardPage from "../pages/AgentDashboardPage";
-import AdminDashboardPage from "../pages/admindashboardpage.jsx";
+import AdminDashboardPage from "../pages/admindashboardpage";
 
 const AppRoutes = () => (
   <BrowserRouter>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiMapPin, FiHome, FiMaximize2 } from 'react-icons/fi';
 import Button from '../button/button';
 import Card from '../card/card';
-import './PropertyCard.css';
+import './propertycard.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 

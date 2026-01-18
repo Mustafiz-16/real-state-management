@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiStar } from 'react-icons/fi';
-import './TestimonialCard.css';
+import './testimonialcard.css';
 
 export default function TestimonialCard({ testimonial }) {
   const { name, location, rating, image, review } = testimonial;

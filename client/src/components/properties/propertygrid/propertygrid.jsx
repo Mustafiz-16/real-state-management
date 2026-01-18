@@ -1,5 +1,5 @@
 import React from "react";
-import PropertyCard from "../../common/propertycard/PropertyCard";
+import PropertyCard from "../../common/propertycard/propertycard";
 import "./propertygrid.css";
 
 export default function PropertyGrid({ properties }) {

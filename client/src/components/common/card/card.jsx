@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css';
+import './card.css';
 
 
 export default function Card({ children, className = '', onClick }) {

@@ -19,6 +19,21 @@ function AuthForm({ mode }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   if (!formData.role || !formData.email || !formData.password) {
+  //     alert("Please fill all required fields.");
+  //     return;
+  //   }
+
+  //   if (mode === "signup" && formData.password !== formData.confirmPassword) {
+  //     alert("Passwords don't match");
+  //     return;
+  //   }
+
+  //   alert(`${mode === "login" ? "Login" : "Signup"} successful!`);
+  // };
   const navigate = useNavigate();
 
 
@@ -47,7 +62,7 @@ function AuthForm({ mode }) {
       if (user.role === "buyer") navigate("/dashboard/buyer");
       else if (user.role === "owner") navigate("/dashboard/owner");
       else if (user.role === "admin") navigate("/dashboard/admin");
-      else navigate("/");
+      else navigate("/"); // fallback
 
     } catch (err) {
       console.error(err.response?.data || err.message);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiMapPin, FiHome, FiDollarSign, FiSearch } from 'react-icons/fi';
 import Button from '../button/button';
-import './SearchBar.css';
+import './searchbar.css';
 
 export default function SearchBar({ onSearch }) {
   const [filters, setFilters] = useState({

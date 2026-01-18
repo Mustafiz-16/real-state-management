@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "../../common/searchbar/SearchBar";
+import SearchBar from "../../common/searchbar/searchbar";
 import PropertyGrid from "../propertygrid/propertygrid";
 import { getApprovedProperties } from "../../../Api/property.api";
 import "./properties.css";

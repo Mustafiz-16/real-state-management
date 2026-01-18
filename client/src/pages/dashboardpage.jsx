@@ -9,7 +9,7 @@ import AdminDashboard from "./admindashboardpage";
 const DashboardPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
-
+  // If no user, redirect to login
   if (!user) {
     window.location.href = "/auth";
     return null;
@@ -20,7 +20,7 @@ const DashboardPage = () => {
     window.location.href = "/auth";
   };
 
-
+  // Render the correct dashboard component based on role
   const renderDashboardByRole = () => {
     switch (user.role) {
       case "buyer":
