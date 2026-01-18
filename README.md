@@ -1,4 +1,4 @@
-# 🏠 Property Management System
+# 🏠 Real Estate Management System
 
 A modern, full‑stack **Property Management System** designed to streamline property listing, management, communication, and bookings. Built using **React**, **Node.js**, **Express**, and **MongoDB**, this application supports multiple user roles with secure authentication and real‑time features.
 
